@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h4> Laptops' Listings </h4>
+
+<br>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Processor</th>
+            <th>CPU</th>
+            <th>Speed</th>
+            <th>Gen</th>
+            <th>RAM</th>
+            <th>Harddrive</th>
+            <th>Camera</th>
+            <th>Battery</th>
+            <th>Serial Number</th>
+            <th>Customer</th>
+            <th>Comments</th>
+            <th>Condition</th>
+            <th>Vendor</th>
+            <th>Status</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for item in items %}
+        <tr>       
+            <td>{{ item.make }}</td>
+            <td>{{ item.model }}</td>
+            <td>{{ item.processor }}</td>
+            <td>{{ item.CPU }}</td>
+            <td>{{ item.Speed }}</td>
+            <td>{{ item.Gen }}</td>
+            <td>{{ item.RAM }}</td>
+            <td>{{ item.Harddrive }}</td>
+            <td>{{ item.Camera }}</td>
+            <td>{{ item.Battery }}</td>
+            <td>{{ item.serial_number }}</td>
+            <td>{{ item.customer }}</td>
+            <td>{{ item.comments }}</td>
+            <td>{{ item.condition }}</td>
+            <td>{{ item.vendor }}</td>
+            <td>{{ item.status }}</td>
+            <td>
+                <a href="{% url 'update_laptop' item.pk %}" class="btn btn-warning btn-sm" role="button">Update</a>
+                <a href="{% url 'delete' item.pk %}" class="btn btn-danger btn-sm" role="button">Delete</a>
+            </td>
+    
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
