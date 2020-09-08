@@ -1,6 +1,6 @@
 # Laptops Inventory Management 
  
-A website for managing the laptops, using CRUD operations
+A website for managing the laptops, using CRUD operations. Make sure not to keep your Django secret an empty string!
 
  Created using:
 
